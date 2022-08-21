@@ -1,4 +1,5 @@
-set(SQUIRREL_SRC sqapi.cpp
+set(SQUIRREL_SRC 
+                 sqapi.cpp
                  sqbaselib.cpp
                  sqclass.cpp
                  sqcompiler.cpp

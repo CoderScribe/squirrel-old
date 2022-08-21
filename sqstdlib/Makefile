@@ -8,25 +8,14 @@ DEFS= $(CC_EXTRA_FLAGS)
 LIB=
 
 OBJS= \
-	sqstdblob.o \
-	sqstdio.o \
-	sqstdstream.o \
 	sqstdmath.o \
-	sqstdsystem.o \
 	sqstdstring.o \
-	sqstdaux.o \
 	sqstdrex.o
 
 SRCS= \
-	sqstdblob.cpp \
-	sqstdio.cpp \
-	sqstdstream.cpp \
 	sqstdmath.cpp \
-	sqstdsystem.cpp \
 	sqstdstring.cpp \
-	sqstdaux.cpp \
 	sqstdrex.cpp
-
 
 sq32:
 	$(CC) -O2 -fno-exceptions -fno-rtti -Wall -fno-strict-aliasing -c $(SRCS) $(INCZ) $(DEFS)

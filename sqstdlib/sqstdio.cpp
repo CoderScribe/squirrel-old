@@ -1,5 +1,10 @@
 /* see copyright notice in squirrel.h */
+#ifdef AZURE_SPHERE
+#include "new.h"
+#include <applibs/storage.h>
+#else
 #include <new>
+#endif
 #include <stdio.h>
 #include <squirrel.h>
 #include <sqstdio.h>
@@ -9,10 +14,18 @@
 //basic API
 SQFILE sqstd_fopen(const SQChar *filename ,const SQChar *mode)
 {
+#ifdef AZURE_SPHERE
+#ifndef SQUNICODE
+    return (SQFILE)Storage_OpenFileInImagePackage(filename);
+#else
+    return (SQFILE)Storage_OpenFileInImagePackage(filename);
+#endif
+#else
 #ifndef SQUNICODE
     return (SQFILE)fopen(filename,mode);
 #else
     return (SQFILE)_wfopen(filename,mode);
+#endif
 #endif
 }
 

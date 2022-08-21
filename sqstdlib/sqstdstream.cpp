@@ -1,5 +1,10 @@
 /* see copyright notice in squirrel.h */
+#ifdef AZURE_SPHERE
+#include "new.h"
+#include <applibs/storage.h>
+#else
 #include <new>
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

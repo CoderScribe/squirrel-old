@@ -11,7 +11,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-#include <new>
+#include "new.h"
+
 //squirrel stuff
 #include <squirrel.h>
 #include "sqobject.h"

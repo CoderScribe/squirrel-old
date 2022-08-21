@@ -26,7 +26,7 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     "$<$<CONFIG:Release>:-O3>"
     "$<$<CONFIG:RelWithDebInfo>:-O3;-g>"
     "$<$<CONFIG:MinSizeRel>:-Os>"
-    "$<$<CONFIG:Debug>:-pg;-pie;-gstabs;-g3;-Og>"
+    "$<$<CONFIG:Debug>:-pie;-gstabs;-g3;-Og>"
     )
 elseif(MSVC)
   set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
@@ -35,7 +35,7 @@ endif()
 
 add_subdirectory(squirrel)
 add_subdirectory(sqstdlib)
-add_subdirectory(sq)
+#add_subdirectory(sq)
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
   set(tgts)
